@@ -30,12 +30,13 @@ function mintNFT(name, description, types, rarity) {
 function listNFTs() {
     for (let i = 0; i < PokemonNftCollection.length; i++) {
         const someNFT = PokemonNftCollection[i];
+        console.log("\n-----------------------\n");
         console.log("Name: " + someNFT.name);
         console.log("Description: " + someNFT.description);
         console.log("Types: " + someNFT.types);
         console.log("Rarity: " + someNFT.rarity);
-        console.log("-----------------------");
     }
+    console.log("\n-----------------------\n");
 }
 
 // Print the total number of NFTs we have minted to the console
