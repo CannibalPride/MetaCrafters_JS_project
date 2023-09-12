@@ -1,0 +1,58 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// Create a variable to hold your NFT's
+let PokemonNftCollection = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata,
+// and store it in the variable above.
+function mintNFT(name, description, types, rarity) {
+    const nft = {
+        name: name,
+        description: description,
+        types: types,
+        rarity: rarity
+    };
+    
+    PokemonNftCollection.push(nft);
+}
+
+// Create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs() {
+    for (let i = 0; i < PokemonNftCollection.length; i++) {
+        const someNFT = PokemonNftCollection[i];
+        console.log("Name: " + someNFT.name);
+        console.log("Description: " + someNFT.description);
+        console.log("Types: " + someNFT.types);
+        console.log("Rarity: " + someNFT.rarity);
+        console.log("-----------------------");
+    }
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    console.log("Total NFTs Minted: " + PokemonNftCollection.length);
+}
+
+// Call your functions below this line
+
+// Mint some NFTs with Pokémon examples
+mintNFT("Pikachu", "An electric-type Pokémon known for its lightning bolt-shaped tail.", "Electric", "Common");
+mintNFT("Charizard", "A fire/flying-type Pokémon with the ability to breathe fire.", "Fire/Flying", "Rare");
+mintNFT("Mewtwo", "A psychic-type Pokémon with immense psychic powers.", "Psychic", "Legendary");
+mintNFT("Eevee", "A normal-type Pokémon known for its ability to evolve into various forms.", "Normal", "Uncommon");
+
+// List the NFTs
+listNFTs();
+
+// Get the total supply
+getTotalSupply();
